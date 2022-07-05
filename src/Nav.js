@@ -14,11 +14,10 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
             navbarScroll
           >
             <Nav.Link href="#action2">Login</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
+            <NavDropdown title="Categories" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Chicken</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Beef</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Lamb</NavDropdown.Item>
