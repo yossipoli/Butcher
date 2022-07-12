@@ -8,7 +8,7 @@ function Input(props) {
     <div>
         {props.type === 'Select'
         ? <Select key={props.id} {...props}/>
-        : <InputComponent key={props.id} {...props}/>
+        : <Input key={props.id} {...props}/>
          }
     </div>
   )
