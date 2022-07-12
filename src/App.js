@@ -15,7 +15,7 @@ function App() {
       </header>
 
       <main>
-        {/* <ItemPage/> */}
+        <ItemPage/>
         <Login/>
       </main>
 
