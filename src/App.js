@@ -4,6 +4,7 @@ import NavBar from './Nav'
 import Footer from './Footer'
 // import ItemPage from './Item-page'
 import ItemPage from './item-page/index.js'
+import Login from './Login'
 
 function App() {
   return (
@@ -14,12 +15,11 @@ function App() {
       </header>
 
       <main>
-        <ItemPage/>
+        {/* <ItemPage/> */}
+        <Login/>
       </main>
 
-
       <Footer/>
-
 
     </div>
   );
