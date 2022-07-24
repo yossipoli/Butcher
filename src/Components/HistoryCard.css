@@ -1,0 +1,25 @@
+.historyCard{
+    background-color: aliceblue;
+    border: 1px solid gray;
+    color: black;
+    border-radius: 10px;
+    margin: 10px;
+    height: 180px;
+}
+
+img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.pic{
+    width: 30%;
+    height: auto;
+}
+
+.buttons{
+    text-align: center;
+}
+.buttons>button{
+    margin: 10px 0;
+}

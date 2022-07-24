@@ -1,0 +1,24 @@
+
+
+.row{
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.col{
+    text-align: left;
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+.invalid{
+    color: red;
+}
+
+.formHead{
+    text-align: center;
+}

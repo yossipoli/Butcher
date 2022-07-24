@@ -1,0 +1,27 @@
+.pic{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.id{
+    text-align: right;
+}
+
+.name{
+    text-align: center;
+}
+
+.textArea{
+    height: 100px;
+    overflow-y: auto;
+}
+
+.card{
+    font-style: italic;
+    color: rgb(250, 253, 34);
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 10%;
+    box-shadow: 8px 8px 8px rgb(82, 78, 78);
+    background: linear-gradient(to right bottom , red , black );
+}
