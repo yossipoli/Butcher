@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { RiShoppingCartFill } from 'react-icons/ri'
 
 function NavBar() {
   return (
@@ -39,7 +40,7 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <Nav.Link href="#action1">🛒</Nav.Link>
+            <Nav.Link href="#">🛒</Nav.Link>
           </Form>
         </Navbar.Collapse>
       </Container>

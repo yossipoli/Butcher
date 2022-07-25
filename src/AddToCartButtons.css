@@ -1,0 +1,22 @@
+.amount{
+    width: 70px;
+}
+
+.freeText{
+    margin-bottom: 10px;
+    width: 95%;
+}
+
+.row{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 33%;
+}
+
+.col{
+    justify-content: space-between;
+}
+
+label, input{
+    margin: 0 5px;
+}

@@ -1,23 +1,22 @@
 import React from 'react'
 import Gallery from './Gallery'
-import ShortDescription from './short-description'
-import FullDescription from './full-description'
+import Description from './description'
+// import FullDescription from './full-description'
+import AddToCartButtons from '../AddToCartButtons'
+import './index.css'
 
 function ItemPage() {
   return (
     <div className='page'>
         <div className='row'>
-            <div className='col'>
+            <div className='col productPictures'>
                 <Gallery/>
             </div>
             <div className='col'>
-                <ShortDescription/>
+                <Description/>
+                <AddToCartButtons/>
             </div>
         </div>
-        <div className='row'>
-            <FullDescription/>
-        </div>
-
     </div>
   )
 }
