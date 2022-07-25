@@ -14,8 +14,8 @@ import AddToCartButtons from "../AddToCartButtons";
 function CardComponent({ edit, id, name, ...props }) {
   return (
     <Card
-      className="card"
-      style={{ width: "18rem" }}
+      className="itemCard"
+      style={{ width: "22rem" }}
     >
       <Card.Img className="pic" variant="top" src="/photos/burger/0.jpg" />
       <Card.Body>

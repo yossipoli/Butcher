@@ -13,10 +13,6 @@
     grid-template-columns: 33%;
 }
 
-.addBtn{
-    display: block;
-}
-
 .col{
     justify-content: space-between;
 }

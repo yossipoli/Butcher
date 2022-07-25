@@ -1,0 +1,13 @@
+.mainTitle{
+    margin-top: 55px;
+    font-family: 'Bombing';
+}
+
+.subTitle{
+    font-family: 'Bombing';
+}
+.products{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}

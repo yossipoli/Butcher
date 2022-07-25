@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddToCartButtons.css";
 
-function AddToCartButtons() {
+function AddToCartButtons({hideAddBtn}) {
   return (
     <div className="buttons row">
       <div className="col col-4">
@@ -26,9 +26,13 @@ function AddToCartButtons() {
       </div>
 
       <div className="row">
-      <button type="button" className="addBtn btn btn-outline-warning">
+        
+      {
+        hideAddBtn ? "" :
+        <button type="button" className="addBtn btn btn-outline-warning">
         Add to Cart
       </button>
+      }
       </div>
     </div>
   );

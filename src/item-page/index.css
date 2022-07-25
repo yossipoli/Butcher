@@ -1,8 +1,4 @@
-/* .row{
-    display: flex;
-    margin-top: 60px;
+.productPictures img{
+    width: 100%;
+    height: 400px;
 }
-
-.col{
-    width: 50%;
-} */

@@ -1,12 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {useState} from 'react'
+// import {useState} from 'react'
 import NavBar from './Nav'
 import Footer from './Footer'
-// import ItemPage from './Item-page'
 import ItemPage from './item-page/index.js'
 import Login from './Login'
-import ProductsPage from './Components/ProductsPage.js'
+import ProductsPage from './ProductsPage.js'
 import History from './History'
 import Cart from './Cart';
 import Register from './Register';
@@ -21,12 +20,12 @@ function App() {
       </header>
 
       <main>
-        <Register/>
-        <Login/>
+        {/* <Register/> */}
+        {/* <Login/> */}
         <ProductsPage/>
-        <ItemPage/>
-        <Cart/>
-        <History/>
+        {/* <ItemPage/> */}
+        {/* <Cart/> */}
+        {/* <History/> */}
       </main>
 
       <Footer/>

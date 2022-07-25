@@ -6,6 +6,7 @@
     margin-top: 50px;
 }
 
-.addBtn{
-    /* display: none; */
+.cartPic{
+    max-width: 500px;
+    height: 225px;
 }

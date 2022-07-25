@@ -1,11 +1,19 @@
 import React from "react";
-import CardComponent from "./Card";
+import CardComponent from "./Components/Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
 
 function ProductsPage() {
   return (
     <div>
+      <header>
+        <h1 className="mainTitle">
+          🐮Butcher🐮
+        </h1>
+        <h3 className='subTitle'>
+          All the rest just killing animals!
+        </h3>
+      </header>
       sort by:
       <div className="mb-3">
         <Form.Check
@@ -14,7 +22,7 @@ function ProductsPage() {
           name="sort"
           type="radio"
           id="name"
-          checked
+          defaultChecked={true}
         />
         <Form.Check
           inline
