@@ -5,8 +5,9 @@ import "./Form.css";
 import { useState } from "react";
 import Input from "./Input";
 import { validate } from "../Common/validations";
+import { Link } from 'react-router-dom'
 
-function FormComponent({formInputs , onSubmitFunc, title, subTitle="" }) {
+function FormComponent({formInputs , onSubmitFunc, link, title, subTitle="" }) {
   const [form, setForm] = useState({...formInputs});
 
   const validateInput = ({ target: { name, value } }) => {
@@ -49,7 +50,7 @@ function FormComponent({formInputs , onSubmitFunc, title, subTitle="" }) {
   return (
     <Alert variant= "success">
       <Alert.Heading className="formHead">{title}</Alert.Heading>
-      <p className="formHead">{subTitle}</p>
+      <p className="formHead" ><Link to={link}>{subTitle}</Link></p>
       <hr />
       <div className="mb-0">
         <Form>

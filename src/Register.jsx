@@ -105,9 +105,10 @@ function Register() {
     <div>
           <Form
           title= "Register"
-          stubTitle = "Please enter your personal details"
+          subTitle = "Already registered? click here!"
           formInputs = {formInputs}
           onSubmitFunc = {onSubmitFunc}
+          link="/login"
           />
     </div>
   )

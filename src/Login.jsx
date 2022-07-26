@@ -42,7 +42,7 @@ function Login() {
     },
   };
 
-  function success(values){
+  function onSubmitFunc(values){
     for (const value in values){
       console.log(value,":",values[value])
     }
@@ -52,9 +52,10 @@ function Login() {
     <div>
       <FormComponent
         title="Login"
-        subTitle="Please enter your personal details for login"
-        onSubmitFunc={success}
+        subTitle="Don't have an account yet? click here!"
+        onSubmitFunc={onSubmitFunc}
         formInputs={formInputs}
+        link="/Register"
       />
     </div>
   );
