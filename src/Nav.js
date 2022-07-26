@@ -5,20 +5,27 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { RiShoppingCartFill } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
+
 
 function NavBar() {
   return (
     <Navbar fixed='top' bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">🐮Butcher</Navbar.Brand>
+        <Navbar.Brand > <Link to="/"> 🐮Butcher </Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
             navbarScroll
           >
-            <Nav.Link href="#action2">Login</Nav.Link>
-            <NavDropdown title="Categories" id="navbarScrollingDropdown">
+            <Nav.Link> 
+            <Link to="/login">Login</Link>
+            </Nav.Link>
+            {/* <Nav.Link name="register"> 
+              <Link to="/register">Register</Link> 
+            </Nav.Link> */}
+            <NavDropdown title="Categories" id="categories">
               <NavDropdown.Item href="#action3">Chicken</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Beef</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Lamb</NavDropdown.Item>
@@ -28,8 +35,9 @@ function NavBar() {
               ALL
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-            My Settings
+            <Nav.Link disabled>
+              {/* TODO  change to settings*/}
+            <Link to="/history"> My Settings </Link>
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -40,7 +48,9 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <Nav.Link href="#">🛒</Nav.Link>
+            <Nav.Link href="#" id="cartIcon" name="cart" >
+               <Link to="/cart"> <RiShoppingCartFill/> </Link> 
+            </Nav.Link>
           </Form>
         </Navbar.Collapse>
       </Container>

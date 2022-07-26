@@ -1,17 +1,49 @@
  
 .App {
+  font-family: 'cascaia code';
   background-color: black;
   color: white;
   text-align: center;
 }
 
+a{
+  font-family: 'cascaia code';
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+nav a, #categories{
+  font-family: 'roberto';
+  font-weight: bolder;
+  color: black;
+}
+
+a.disabled{
+  text-decoration: line-through;
+}
+
+#categories:hover{
+  color: red;
+}
+
+a:hover{
+  color: red;
+}
+
 main{
-  /* margin: 60px; */
+  margin: 60px;
 }
 
 footer{
   margin-bottom: 0;
   position: fixed;
+}
+
+#cartIcon{
+  margin: auto 20px;
+  font-size: 25px;
+  color: brown;
 }
 
 
