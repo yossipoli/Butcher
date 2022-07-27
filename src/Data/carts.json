@@ -1,0 +1,26 @@
+[
+    {
+        "customer_id": 1,
+        "product_id": 1,
+        "amount": 1,
+        "last_update": "2022-07-09 00:00:00"
+    },
+    {
+        "customer_id": 4,
+        "product_id": 2,
+        "amount": 1.5,
+        "last_update": "2022-07-01 00:00:00"
+    },
+    {
+        "customer_id": 4,
+        "product_id": 4,
+        "amount": 2,
+        "last_update": "2022-07-01 00:00:00"
+    },
+    {
+        "customer_id": 4,
+        "product_id": 5,
+        "amount": 1,
+        "last_update": "2022-07-01 00:00:00"
+    }
+]

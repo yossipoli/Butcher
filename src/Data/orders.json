@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "customer_id": 5,
+        "order_date": "2022-07-12 10:18:15",
+        "require_date": "2022-07-20 00:00:00",
+        "ship_city": "Eilat",
+        "ship_address": "Roomate 34"
+    }
+]
