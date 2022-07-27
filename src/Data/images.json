@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "product_id": 1,
+        "src": "/photos/beef_fillet/0.jpg"
+    },
+    {
+        "id": 2,
+        "product_id": 1,
+        "src": "/photos/beef_fillet/1.jpg"
+    },
+    {
+        "id": 3,
+        "product_id": 1,
+        "src": "/photos/beef_fillet/2.jpg"
+    },
+    {
+        "id": 4,
+        "product_id": 1,
+        "src": "/photos/beef_fillet/3.jpg"
+    },
+    {
+        "id": 5,
+        "product_id": 2,
+        "src": "/photos/burger/0.jpg"
+    },
+    {
+        "id": 6,
+        "product_id": 2,
+        "src": "/photos/burger/1.jpg"
+    },
+    {
+        "id": 7,
+        "product_id": 2,
+        "src": "/photos/burger/0.jpg"
+    },
+    {
+        "id": 8,
+        "product_id": 3,
+        "src": "/photos/chicken/0.jpg"
+    },
+    {
+        "id": 9,
+        "product_id": 4,
+        "src": "/photos/chicken_breast/0.jpg"
+    },
+    {
+        "id": 10,
+        "product_id": 4,
+        "src": "/photos/chicken_breast/1.jpg"
+    },
+    {
+        "id": 11,
+        "product_id": 4,
+        "src": "/photos/chicken_breast/2.jpg"
+    },
+    {
+        "id": 12,
+        "product_id": 4,
+        "src": "/photos/chicken_breast/3.jpg"
+    },
+    {
+        "id": 13,
+        "product_id": 4,
+        "src": "/photos/chicken_breast/4.jpg"
+    },
+    {
+        "id": 14,
+        "product_id": 5,
+        "src": "/photos/chicken_legs/0.jpg"
+    },
+    {
+        "id": 15,
+        "product_id": 5,
+        "src": "/photos/chicken_legs/1.jpg"
+    },
+    {
+        "id": 16,
+        "product_id": 5,
+        "src": "/photos/chicken_legs/2.jpg"
+    },
+    {
+        "id": 17,
+        "product_id": 5,
+        "src": "/photos/chicken_legs/3.jpg"
+    },
+    {
+        "id": 18,
+        "product_id": 5,
+        "src": "/photos/chicken_legs/4.jpg"
+    },
+    {
+        "id": 19,
+        "product_id": 6,
+        "src": "/photos/chicken_skewers/0.jpg"
+    },
+    {
+        "id": 20,
+        "product_id": 6,
+        "src": "/photos/chicken_skewers/1.jpg"
+    },
+    {
+        "id": 21,
+        "product_id": 7,
+        "src": "/photos/cops/0.jpg"
+    },
+    {
+        "id": 22,
+        "product_id": 7,
+        "src": "/photos/cops/1.jpg"
+    },
+    {
+        "id": 23,
+        "product_id": 8,
+        "src": "/photos/entrecote/0.jpg"
+    },
+    {
+        "id": 24,
+        "product_id": 8,
+        "src": "/photos/entrecote/1.jpg"
+    },
+    {
+        "id": 25,
+        "product_id": 8,
+        "src": "/photos/entrecote/2.jpg"
+    },
+    {
+        "id": 26,
+        "product_id": 8,
+        "src": "/photos/entrecote/3.jpg"
+    },
+    {
+        "id": 27,
+        "product_id": 8,
+        "src": "/photos/entrecote/4.jpg"
+    },
+    {
+        "id": 28,
+        "product_id": 8,
+        "src": "/photos/entrecote/5.jpg"
+    },
+    {
+        "id": 29,
+        "product_id": 9,
+        "src": "/photos/mince/0.jpg"
+    },
+    {
+        "id": 30,
+        "product_id": 9,
+        "src": "/photos/mince/1.jpg"
+    },
+    {
+        "id": 31,
+        "product_id": 9,
+        "src": "/photos/mince/2.jpg"
+    },
+    {
+        "id": 32,
+        "product_id": 9,
+        "src": "/photos/mince/3.jpg"
+    },
+    {
+        "id": 33,
+        "product_id": 9,
+        "src": "/photos/mince/4.jpg"
+    },
+    {
+        "id": 34,
+        "product_id": 10,
+        "src": "/photos/sirloin/0.jpg"
+    },
+    {
+        "id": 35,
+        "product_id": 10,
+        "src": "/photos/sirloin/1.jpg"
+    }
+]

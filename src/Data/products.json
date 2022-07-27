@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Beef Fillet",
+        "category_id": 1,
+        "price": 120,
+        "stock": 120,
+        "description": "Clean steak without fat. Serving recommendation: 1 kg is suitable for 3-4 diners."
+    },
+    {
+        "id": 2,
+        "name": "Burger",
+        "category_id": 1,
+        "price": 75,
+        "stock": 200,
+        "description": "A hamburger made from a combination of beef shoulder, asado, and 20% fat for a perfect culinary experience. The meat from which the hamburger is made up is of particularly fine quality and is ground daily. You can choose another combination of beef/mutto..."
+    },
+    {
+        "id": 3,
+        "name": "Whole Chicken",
+        "category_id": 3,
+        "price": 30,
+        "stock": 300,
+        "description": "A whole chicken without feathers, please indicate whether to divide it or leave it whole."
+    },
+    {
+        "id": 4,
+        "name": "Chicken Breast",
+        "category_id": 3,
+        "price": 45,
+        "stock": 140,
+        "description": "Main part of the chicken, makes up the bulk of the mass of the whole chicken. A large, bright and low-fat piece. Easy to process, can be cut into slices, cubes, strips and even made whole. Mainly used for frying and sautéing."
+    },
+    {
+        "id": 5,
+        "name": "Chicken Legs",
+        "category_id": 3,
+        "price": 35,
+        "stock": 200,
+        "description": "Chicken drumsticks - also known as 'poolke'. Very juicy meat, and not too fatty. Suitable for short/long cooking."
+    },
+    {
+        "id": 6,
+        "name": "Chicken skewers",
+        "category_id": 3,
+        "price": 65,
+        "stock": 160,
+        "description": "Selected pieces skewered about a kilogram in a case of about 8 pieces."
+    },
+    {
+        "id": 7,
+        "name": "Lamb Chops",
+        "category_id": 2,
+        "price": 200,
+        "stock": 100,
+        "description": "Quality smuggled lamb ribs."
+    },
+    {
+        "id": 8,
+        "name": "Entrecote",
+        "category_id": 1,
+        "price": 180,
+        "stock": 140,
+        "description": "Premium entrecote. Fresh and high quality. Carefully selected sliced meat."
+    },
+    {
+        "id": 9,
+        "name": "Mince",
+        "category_id": 4,
+        "price": 50,
+        "stock": 300,
+        "description": "Fresh and clean ground meat"
+    },
+    {
+        "id": 10,
+        "name": "Sirloin",
+        "category_id": 1,
+        "price": 90,
+        "stock": 50,
+        "description": "Quality sirloin, clean of fat."
+    }
+]
