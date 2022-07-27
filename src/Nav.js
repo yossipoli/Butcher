@@ -35,9 +35,9 @@ function NavBar() {
               ALL
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link disabled>
+            <Nav.Link >
               {/* TODO  change to settings*/}
-            <Link to="/history"> My Settings </Link>
+            <Link to="/personal"> My Settings </Link>
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

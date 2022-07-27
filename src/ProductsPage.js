@@ -2,6 +2,7 @@ import React from "react";
 import CardComponent from "./Components/Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
+import {Link} from 'react-router-dom'
 
 function ProductsPage() {
   return (
@@ -47,11 +48,14 @@ function ProductsPage() {
         />
       </div>
       <div className="products">
-        <CardComponent />
-        <CardComponent />
-        <CardComponent />
-        <CardComponent />
-        <CardComponent />
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
+        <Link to="item"> <CardComponent /> </Link>
       </div>
     </div>
   );
