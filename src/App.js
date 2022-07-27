@@ -9,6 +9,7 @@ import ProductsPage from './ProductsPage.js'
 import History from './History'
 import Cart from './Cart';
 import Register from './Register';
+import Personal from './Personal';
 import { BrowserRouter as Router, Route , Routes } from 'react-router-dom'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         </header>
 
         <main>
+
           <Routes>
             <Route exact path="/" element={<ProductsPage/>}/>
             <Route path="/register" element={<Register/>}/>
@@ -45,7 +47,10 @@ function App() {
             <Route path="/item" element={<ItemPage/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/history" element={<History/>}/>
+            <Route path="/personal" element={<Personal/>}/>
           </Routes>
+
+
           {/* { currentPage.register && <Register/>}
           {currentPage.login && <Login/>}
           {currentPage.productsPage && <ProductsPage/>}
@@ -53,6 +58,7 @@ function App() {
           {currentPage.cart && <Cart/>}
           {currentPage.history && <History/>}
           <ItemPage/> */}
+
         </main>
 
         <Footer/>
