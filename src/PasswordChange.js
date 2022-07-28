@@ -8,7 +8,7 @@ const changePassword={
         type: "password",
         validations: {
           required: true,
-          pattern: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
+          selfsame: "password",
         },
         errors: [],
       },

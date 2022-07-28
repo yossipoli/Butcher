@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import CardComponent from "./Components/Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
-import {Link} from 'react-router-dom'
+import {Products} from './DAL/api'
 
 function ProductsPage() {
+  let items = JSON.parse(sessionStorage.getItem("items")) || null
+  const [products, setProducts]=useState(items)
+  async function getProducts(){
+    items = await Products.data
+    setProducts(items)
+    sessionStorage.setItem("items", JSON.stringify(items))
+  }
+  !products &&  getProducts()
+
   return (
     <div>
       <header>
@@ -48,14 +57,7 @@ function ProductsPage() {
         />
       </div>
       <div className="products">
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
-        <Link to="item"> <CardComponent /> </Link>
+        {products.length===0? "LOADING...":products.map((product, index)=><CardComponent key={index} {...product}/>)}
       </div>
     </div>
   );

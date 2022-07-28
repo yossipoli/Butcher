@@ -1,4 +1,10 @@
-import data from './../Data/Users.json'
+import users_data from './../Data/Users.json'
+import carts_data from './../Data/carts.json'
+import categories_data from './../Data/categories.json'
+import images_data from './../Data/images.json'
+import order_details_data from './../Data/order_details.json'
+import orders_data from './../Data/orders.json'
+import products_data from './../Data/products.json'
 
 class api {
   constructor(data) {
@@ -6,7 +12,7 @@ class api {
   }
 
   get data() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(this._data);
       }, 2000);
@@ -17,25 +23,40 @@ class api {
 
       setTimeout(() => {
         this._data = newData;
-        localStorage.setItem("data", JSON.stringify(this._data));
+        // sessionStorage.setItem("data", JSON.stringify(this._data));
       }, 2000);
 
   }
 
-  getItem(id) {
-    return new Promise((resolve) => {
+  getObjectById(id) {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this._data[id]);
+        resolve(this._data.find(obj=>obj.id === id));
       }, 2000);
     });
   }
 
-  addItem(newItem) {
+  getImageByProductId(id) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this._data.find(obj=>obj.product_id === id));
+      }, 2000);
+    });
+  }
+
+  getAllImagesByProductId(id) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this._data.filter(obj=>obj.product_id === id));
+      }, 2000);
+    });
+  }
+
+  addObject(newItem) {
 
       setTimeout(() => {
-        newItem.id = Object.keys(this._data).length + 1;
-        this._data[newItem.id] = newItem;
-        localStorage.setItem("data", JSON.stringify(this._data));
+        this._data.push(newItem);
+        // localStorage.setItem("data", JSON.stringify(this._data));
       }, 2000);
 
   }
@@ -43,54 +64,28 @@ class api {
   setItem(id, newItemData) {
 
       setTimeout(() => {
-        newItemData.id= id
-        this._data[id] = newItemData;
-        localStorage.setItem("data", JSON.stringify(this._data));
+
+        // localStorage.setItem("data", JSON.stringify(this._data));
       }, 2000);
 
   }
 
   removeItem(id) {
-
+      
       setTimeout(() => {
-        delete this._data[id];
-        localStorage.setItem("data", JSON.stringify(this._data));
+        this._data = this._data.filter(obj=>obj.id!==id)
+        // localStorage.setItem("data", JSON.stringify(this._data));
       }, 2000);
 
   }
 }
 
-// const data = {
-//   1: {
-//     id: 1,
-//     name: "John",
-//     email: "john@gmail.com",
-//     address: "My House 29, New York",
-//     course: "Java Script",
-//     gender: "Male",
-//     agree: true,
-//   },
-//   2: {
-//     id: 2,
-//     name: "Dan",
-//     email: "dan@gmail.com",
-//     address: "Home 14, Tel-Aviv",
-//     course: "CSS",
-//     gender: "Male",
-//     agree: true,
-//   },
-//   3: {
-//     id: 3,
-//     name: "Lior",
-//     email: "lior@gmail.com",
-//     address: "My House 3, Some City",
-//     course: "HTML",
-//     gender: "Female",
-//     agree: true,
-//   },
-// };
+// const ApiProductsData = JSON.parse(sessionStorage.getItem("data")) || ProductsData;
+export const Users = new api(users_data);
+export const Carts = new api(carts_data);
+export const Categories = new api(categories_data);
+export const Images = new api(images_data);
+export const Order_Details = new api(order_details_data);
+export const Orders = new api(orders_data);
+export const Products = new api(products_data);
 
-const APIdata = JSON.parse(localStorage.getItem("data")) || data;
-const Students = new api(APIdata);
-
-export default Students;

@@ -1,12 +1,16 @@
 import React from 'react'
 
-function Description() {
+function Description({name, description, category, price}) {
   return (
     <div className="col">
-      <h1>Item35</h1>
-
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus officia quis ratione maxime autem? Eveniet repellat corporis, rerum qui, debitis repellendus voluptate adipisci aliquid amet mollitia nostrum reprehenderit iusto enim!</p>
-      <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus officia quis ratione maxime autem? Eveniet repellat corporis, rerum qui, debitis repellendus voluptate adipisci aliquid amet mollitia nostrum reprehenderit iusto enim!</p>
+      <h1>{name}</h1>
+        <p>
+          {description}
+        </p>
+        <p>
+          {price}₪ for 1k/g
+        </p>
+          
     </div>
   )
 }
