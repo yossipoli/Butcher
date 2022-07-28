@@ -2,7 +2,7 @@ import React from 'react'
 import './Register.css'
 import Form from './Components/Form'
 
-function Register(firstName="", lastName="",email="",password="",) {
+function Register({firstName="", lastName="",email="",password=""}) {
   const formInputs = {
     firstName: {
       id: 1,

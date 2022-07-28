@@ -61,10 +61,10 @@ class api {
 
   }
 
-  setItem(id, newItemData) {
-
-      setTimeout(() => {
-
+  setObj(id, newItemData) {
+    
+    setTimeout(() => {
+      this._data[this._data.indexOf(obj=>obj.id === id)]=newItemData
         // localStorage.setItem("data", JSON.stringify(this._data));
       }, 2000);
 

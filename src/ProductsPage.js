@@ -5,14 +5,14 @@ import Form from "react-bootstrap/Form";
 import {Products} from './DAL/api'
 
 function ProductsPage() {
-  let items = JSON.parse(sessionStorage.getItem("items")) || null
+  let items = JSON.parse(sessionStorage.getItem("items")) || []
   const [products, setProducts]=useState(items)
   async function getProducts(){
     items = await Products.data
     setProducts(items)
     sessionStorage.setItem("items", JSON.stringify(items))
   }
-  !products &&  getProducts()
+  products.length===0 &&  getProducts()
 
   return (
     <div>
