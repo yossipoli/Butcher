@@ -2,32 +2,36 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Card.css";
 import AddToCartButtons from "../AddToCartButtons";
+import { Link, useParams } from "react-router-dom";
+import { Images } from "./../DAL/api";
+import Spinner from "react-bootstrap/Spinner";
+import { useState } from "react";
+function CardComponent(props) {
+  const [image, setImage] = useState(false);
+  async function getImage() {
+    setImage(await Images.getImageByProductId(props.id));
+  }
+  getImage();
 
-// const colors = [
-//   "lightpink",
-//   "orange",
-//   "yellow",
-//   "lightgreen",
-//   "lightblue",
-//   "violet",
-// ];
-function CardComponent({ edit, id, name, ...props }) {
+
+
   return (
-    <Card
-      className="itemCard"
-      style={{ width: "22rem" }}
-    >
-      <Card.Img className="pic" variant="top" src="/photos/burger/0.jpg" />
+    <Card className="itemCard" style={{ width: "22rem" }}>
+      <Link to={`/products/${props.id}`}>
+        <Card.Img
+          className="pic"
+          variant="top"
+          src={image.src || <Spinner animation="grow" variant="light" />}
+          alt={props.name}
+          title={props.name}
+        />
+      </Link>
       <Card.Body>
-        <Card.Title className="name"> name{name}</Card.Title>
+        <Card.Title className="name">{props.name}</Card.Title>
 
-          <Card.Text className="textArea">
-          A hamburger made from a combination of beef shoulder, asado, and 20% fat for a perfect culinary experience. The meat from which the hamburger is made up is of particularly fine quality and is ground daily. You can choose another combination of beef/mutton/lamb cuts for an additional fee.
-              {props.description}
-          </Card.Text>
+        <Card.Text className="textArea">{props.description}</Card.Text>
 
-        <AddToCartButtons/>
-
+        <AddToCartButtons />
       </Card.Body>
     </Card>
   );

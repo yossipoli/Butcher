@@ -41,13 +41,14 @@ function App() {
         <main>
 
           <Routes>
-            <Route exact path="/" element={<ProductsPage/>}/>
+            <Route path="/" element={<ProductsPage/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/item" element={<ItemPage/>}/>
+            <Route exact path="products/:product_id" element={<ItemPage/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/history" element={<History/>}/>
             <Route path="/personal" element={<Personal/>}/>
+            <Route path="*" element={<ProductsPage/>}/>
           </Routes>
 
 

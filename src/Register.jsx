@@ -2,14 +2,14 @@ import React from 'react'
 import './Register.css'
 import Form from './Components/Form'
 
-function Register() {
+function Register(firstName="", lastName="",email="",password="",) {
   const formInputs = {
     firstName: {
       id: 1,
       name: "firstName",
       label: "First name",
       placeholder: "Please enter your first name",
-      value: "",
+      value: firstName,
       type: "text",
       validations: {
         required: true,
@@ -22,7 +22,7 @@ function Register() {
       name: "lastName",
       label: "Last name",
       placeholder: "Please enter your last name",
-      value: "",
+      value: lastName,
       type: "text",
       validations: {
         required: true,
@@ -35,7 +35,7 @@ function Register() {
       name: "email",
       label: "Email",
       placeholder: "Please enter your email",
-      value: "",
+      value: email,
       type: "email",
       validations: {
         required: true,
@@ -48,7 +48,7 @@ function Register() {
       name: "confirmEmail",
       label: "Confirm Email",
       placeholder: "Please re-enter your email for validation",
-      value: "",
+      value: email,
       type: "email",
       validations: {
         required: true,
@@ -61,7 +61,7 @@ function Register() {
       name: "password",
       label: "Password",
       placeholder: "Please enter a password",
-      value: "",
+      value: password,
       type: "password",
       validations: {
         required: true,
@@ -75,7 +75,7 @@ function Register() {
       name: "confirmPassword",
       label: "Confirm password",
       placeholder: "Please re-enter your password for validation",
-      value: "",
+      value: password,
       type: "password",
       validations: {
         required: true,
