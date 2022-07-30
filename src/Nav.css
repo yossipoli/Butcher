@@ -1,0 +1,28 @@
+.nav{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    
+}
+
+.navIcon{
+    margin: 0 20px;
+    align-items: center;
+}
+
+.cartIcon{
+    font-size: 2rem;
+}
+
+
+.rightIcons{
+    justify-content: space-around;
+    height: 55px;
+}
+
+.leftIcons{
+    height: 55px;
+    justify-content: space-around;
+
+    margin-left: 0;
+}
