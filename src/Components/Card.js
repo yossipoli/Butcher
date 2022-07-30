@@ -6,14 +6,14 @@ import { Link, useParams } from "react-router-dom";
 import { Images } from "./../DAL/api";
 import Spinner from "react-bootstrap/Spinner";
 import { useState } from "react";
+
 function CardComponent(props) {
+  
   const [image, setImage] = useState(false);
   async function getImage() {
     setImage(await Images.getImageByProductId(props.id));
   }
   getImage();
-
-
 
   return (
     <Card className="itemCard" style={{ width: "22rem" }}>

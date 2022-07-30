@@ -31,7 +31,7 @@ class api {
   getObjectById(id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this._data.find(obj=>obj.id === id));
+        resolve(this._data.find(obj=>obj.id === id) || {});
       }, 2000);
     });
   }

@@ -16,13 +16,17 @@ function ProductsPage() {
 
   return (
     <div>
-      <header>
+      <header >
         <h1 className="mainTitle">
-          🐮Butcher🐮
+          <img src="/logo.png"/>
+          Butcher
         </h1>
+        
+
         <h3 className='subTitle'>
           All the rest just killing animals!
         </h3>
+        
       </header>
       sort by:
       <div className="mb-3">

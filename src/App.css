@@ -1,4 +1,9 @@
- 
+
+
+html{
+  background-color: black;
+}
+
 .App {
   font-family: 'cascaia code';
   background-color: black;
@@ -7,14 +12,14 @@
 }
 
 a{
-  font-family: 'cascaia code', 'Ariel';
+  font-family:  'Ariel';
   text-decoration: none;
   font-weight: bold;
   color: black;
 }
 
 nav a, #categories{
-  font-family: 'roberto';
+  /* font-family: 'roberto'; */
   font-weight: bolder;
   color: black;
 }
@@ -32,7 +37,7 @@ a:hover{
 }
 
 main{
-  margin: 60px;
+  margin: 75px;
 }
 
 footer{

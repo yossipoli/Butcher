@@ -10,18 +10,23 @@ import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
-    <Navbar fixed='top' bg="light" expand="lg">
+    <Navbar className="nav" fixed='top' bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand > <Link to="/"> 🐮Butcher </Link></Navbar.Brand>
+        {/* <Navbar.Brand >  */}
+          <Link to="/"> 
+              <img src="/logo.png" style={{width:"35px"}}/>
+              Butcher
+           </Link>
+          {/* </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
             navbarScroll
           >
-            <Nav.Link> 
+            {/* <Nav.Link>  */}
             <Link to="/login">Login</Link>
-            </Nav.Link>
+            {/* </Nav.Link> */}
             {/* <Nav.Link name="register"> 
               <Link to="/register">Register</Link> 
             </Nav.Link> */}
@@ -35,10 +40,9 @@ function NavBar() {
               ALL
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link >
-              {/* TODO  change to settings*/}
+            {/* <Nav.Link > */}
             <Link to="/personal"> My Settings </Link>
-            </Nav.Link>
+            {/* </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -48,9 +52,9 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <Nav.Link href="#" id="cartIcon" name="cart" >
+            {/* <Nav.Link href="#" id="cartIcon" name="cart" > */}
                <Link to="/cart"> <RiShoppingCartFill/> </Link> 
-            </Nav.Link>
+            {/* </Nav.Link> */}
           </Form>
         </Navbar.Collapse>
       </Container>
