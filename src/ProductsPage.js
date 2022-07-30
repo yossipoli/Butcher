@@ -3,6 +3,7 @@ import CardComponent from "./Components/Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
 import {Products} from './DAL/api'
+import { includes, reverse } from "lodash";
 
 function ProductsPage() {
   let items = JSON.parse(sessionStorage.getItem("items")) || []
@@ -13,6 +14,13 @@ function ProductsPage() {
     sessionStorage.setItem("items", JSON.stringify(items))
   }
   products.length===0 &&  getProducts()
+
+  function sortBy({target:{id}}){
+    id=id.split("-")
+    let toReverse=1
+    if (id.length>1) toReverse=-1
+    setProducts([...products.sort((productA, productB)=>productA[id[0]]<productB[id[0]]? -1*toReverse : 1*toReverse)])
+  }
 
   return (
     <div>
@@ -36,14 +44,15 @@ function ProductsPage() {
           name="sort"
           type="radio"
           id="name"
-          defaultChecked={true}
+          onClick={sortBy}
         />
         <Form.Check
           inline
           label="name (Z-A)"
           name="sort"
           type="radio"
-          id="nameDesc"
+          id="name-desc"
+          onClick={sortBy}
         />
         <Form.Check
           inline
@@ -51,13 +60,15 @@ function ProductsPage() {
           name="sort"
           type="radio"
           id="price"
+          onClick={sortBy}
         />
         <Form.Check
           inline
           label="price (hight-low)"
           name="sort"
           type="radio"
-          id="priceDesc"
+          id="price-desc"
+          onClick={sortBy}
         />
       </div>
       <div className="products">
