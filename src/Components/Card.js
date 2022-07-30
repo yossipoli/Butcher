@@ -30,6 +30,7 @@ function CardComponent(props) {
         <Card.Title className="name">{props.name}</Card.Title>
 
         <Card.Text className="textArea">{props.description}</Card.Text>
+        <Card.Text className="textArea">{props.price}₪ for 1k/g</Card.Text>
 
         <AddToCartButtons />
       </Card.Body>
