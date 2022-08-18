@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
 
 function PersonalDetails({first_name, last_name, email, password, phone=false, city=false, address=false}) {
   
@@ -17,7 +16,6 @@ function PersonalDetails({first_name, last_name, email, password, phone=false, c
           <Button variant="outline-warning">Edit</Button>{' '}
           <Button variant="outline-warning">Change password</Button>{' '}
           
-
       </div>
         <div className="col">
           

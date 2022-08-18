@@ -1,25 +1,9 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import History from "./../history/History";
-import Cart from "./../cart/Cart";
-import PersonalDetails from "./../personal/PersonalDetails";
-import {useState} from 'react'
 import './Personal.css'
 import { Link , Outlet } from 'react-router-dom'
 
 function Personal() {
-
-  // const pages={
-  //   personalDetails: false,
-  //   history: false,
-  //   cart: false,
-  // }
-
-  // const [showPage, setShowPage] = useState({...pages, ["personalDetails"]:true})
-
-  // function changePage({target:{id}}){
-  //   setShowPage({...pages, [id]:true})
-  // }
 
   return (
     <div>
@@ -37,9 +21,6 @@ function Personal() {
         <div className="col-9">
           <div className="row">
             <Outlet/>
-            {/* {showPage.personalDetails && <PersonalDetails/>}
-            {showPage.cart && <Cart/>}
-            {showPage.history && <History/>} */}
           </div>
         </div>
       </div>

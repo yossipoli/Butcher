@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import CardComponent from "./Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
 import { Products } from "./../../DAL/api";
+import { Categories } from "./../../DAL/api";
+import {useParams} from 'react-router-dom'
+import { get } from "lodash";
 
 function ProductsPage() {
+
     let items = JSON.parse(sessionStorage.getItem("items")) || [];
     const [products, setProducts] = useState(items);
+
+    const {categoryName, search} = useParams()
+
+    //TODO need to render if insert new search/category
+    useEffect(() => {
+        if(categoryName) getProductOfCategory(categoryName)
+        if(search) setProducts(items.filter(prod=> prod.name.toLowerCase().includes(search.toLowerCase())))
+    }, [categoryName, search])
+
     async function getProducts() {
         items = await Products.data;
         setProducts(items);
         sessionStorage.setItem("items", JSON.stringify(items));
     }
-    products.length === 0 && getProducts();
+
+    async function getProductOfCategory(name){
+        const categoryId = await Categories.getCategoryIdByName(name)
+        setProducts(items.filter(product=>product.categoryId == categoryId))
+    }
+
+    !items.length && getProducts()
 
     function sortBy({ target: { id } }) {
         id = id.split("-");
@@ -66,7 +85,7 @@ function ProductsPage() {
                     />
                     <Form.Check
                         inline
-                        label="price (hight-low)"
+                        label="price (high-low)"
                         name="sort"
                         type="radio"
                         id="price-desc"

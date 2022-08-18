@@ -9,9 +9,10 @@ import {useState , useEffect} from 'react'
 
 function ItemPage() {
   
+  const {product_id} = useParams()
+
   const [images, setImages] = useState()
   const [product, setProduct] = useState()
-  const {product_id} = useParams()
 
   useEffect(() => {
     async function getData(){
@@ -21,7 +22,6 @@ function ItemPage() {
     getData()
   }, [])
 
-console.log('product: ', product);
   return (
     <div className="page">
       { product ?
