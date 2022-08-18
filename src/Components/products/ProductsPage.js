@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import CardComponent from "./Components/Card";
+import CardComponent from "./Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
-import {Products} from './DAL/api'
-import { includes, reverse } from "lodash";
+import {Products} from './../../DAL/api'
 
 function ProductsPage() {
   let items = JSON.parse(sessionStorage.getItem("items")) || []

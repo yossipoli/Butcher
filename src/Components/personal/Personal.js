@@ -1,8 +1,8 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import History from "./History";
-import Cart from "./Cart";
-import PersonalDetails from "./PersonalDetails";
+import History from "./../history/History";
+import Cart from "./../cart/Cart";
+import PersonalDetails from "./../personal/PersonalDetails";
 import {useState} from 'react'
 import './Personal.css'
 

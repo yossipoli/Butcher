@@ -1,71 +1,42 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import {useState} from 'react'
-import NavBar from './Nav'
-import Footer from './Footer'
-import ItemPage from './item-page/index.js'
-import Login from './Login'
-import ProductsPage from './ProductsPage.js'
-import History from './History'
-import Cart from './Cart';
-import Register from './Register';
-import Personal from './Personal';
-import { BrowserRouter as Router, Route , Routes } from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavBar from "./Components/Nav";
+import Footer from "./Components/Footer";
+import ItemPage from "./Components/item-page/index.js";
+import Login from "./Components/forms/Login";
+import ProductsPage from "./Components/products/ProductsPage.js";
+import History from "./Components/history/History";
+import Cart from "./Components/cart/Cart";
+import Register from "./Components/forms/Register";
+import Personal from "./Components/personal/Personal";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+    return (
+        <div className="App">
+            <Router>
+                <header className="App-header">
+                    <NavBar />
+                </header>
 
-  // const showingPage = {
-  //   login: false,
-  //   register: false,
-  //   productsPage: false,
-  //   itemPage: false,
-  //   cart: false,
-  //   history: false,
+                <main>
+                    <Routes>
+                        <Route path="/" element={<ProductsPage />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route exact path="products/:product_id" element={<ItemPage />}/>
+                        <Route path="/personal" element={<Personal />}>
+                        </Route>
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/history" element={<History />} />
+                        <Route path="*" element={<ProductsPage />} />
+                    </Routes>
+                </main>
 
-  // }
-  
-  // const [currentPage, setCurrentPage] = useState({...showingPage, ["productsPage"]:true} )
-
-  // function changePage({target:{name}}){
-  //   setCurrentPage({...showingPage, [name]:true})
-  // }
-
-  return (
-    <div className="App">
-      <Router>
-
-        <header className="App-header">
-          <NavBar />
-        </header>
-
-        <main>
-
-          <Routes>
-            <Route path="/" element={<ProductsPage/>}/>
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route exact path="products/:product_id" element={<ItemPage/>}/>
-            <Route path="/cart" element={<Cart/>}/>
-            <Route path="/history" element={<History/>}/>
-            <Route path="/personal" element={<Personal/>}/>
-            <Route path="*" element={<ProductsPage/>}/>
-          </Routes>
-
-
-          {/* { currentPage.register && <Register/>}
-          {currentPage.login && <Login/>}
-          {currentPage.productsPage && <ProductsPage/>}
-          {currentPage.itemPage && <ItemPage/>}
-          {currentPage.cart && <Cart/>}
-          {currentPage.history && <History/>}
-          <ItemPage/> */}
-
-        </main>
-
-        <Footer/>
-      </Router>
-    </div>
-  );
+                <Footer />
+            </Router>
+        </div>
+    );
 }
 
 export default App;
