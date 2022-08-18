@@ -27,3 +27,9 @@
     box-shadow: 8px 8px 8px rgb(82, 78, 78);
     background: linear-gradient(to right bottom , rgb(77, 76, 76) , black );
 }
+
+.itemCard .price{
+    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
