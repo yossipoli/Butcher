@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import "./Form.css";
 import { useState } from "react";
 import Input from "./Input";
-import { validate } from "../../Common/validations";
+import { validate } from "../../common/validations";
 import { Link } from 'react-router-dom'
 
 function FormComponent({formInputs , onSubmitFunc, link, title, subTitle="" }) {
