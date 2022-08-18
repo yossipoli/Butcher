@@ -9,6 +9,7 @@ import History from "./Components/history/History";
 import Cart from "./Components/cart/Cart";
 import Register from "./Components/forms/Register";
 import Personal from "./Components/personal/Personal";
+import PersonalDetails from './Components/personal/PersonalDetails'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -26,9 +27,10 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route exact path="products/:product_id" element={<ItemPage />}/>
                         <Route path="/personal" element={<Personal />}>
+                            <Route path="personal-details" element={<PersonalDetails/>}/>
+                            <Route path="cart" element={<Cart />} />
+                            <Route path="history" element={<History />} />
                         </Route>
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/history" element={<History />} />
                         <Route path="*" element={<ProductsPage />} />
                     </Routes>
                 </main>

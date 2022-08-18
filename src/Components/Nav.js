@@ -57,7 +57,7 @@ function NavBar() {
                         />
                         <Button variant="outline-success">Search</Button>
                         <div className="link cart">
-                            <Link to="/cart">
+                            <Link to="/personal/cart">
                                 {" "}
                                 <RiShoppingCartFill />{" "}
                             </Link>
