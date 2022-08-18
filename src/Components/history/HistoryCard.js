@@ -6,7 +6,7 @@ function HistoryCard() {
   return (
     <div className="row historyCard">
         <div className="col picture">
-            <img src='/../photos/burger/1.jpg'/>
+            <img src='/../photos/burger/1.jpg' alt='burger'/>
         </div>
         <div className="col description">
           <h5>Burger</h5>

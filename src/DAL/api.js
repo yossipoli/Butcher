@@ -19,6 +19,15 @@ class api {
     });
   }
 
+  getCategoryIdByName(name){
+    return new Promise((resolve, reject)=>{
+      setTimeout(() => {
+        const category = this._data.find(category=>category.name.toLowerCase()===name.toLowerCase())
+        resolve(category.id || null)
+      }, 500);
+    })
+  }
+
   set data(newData) {
 
       setTimeout(() => {

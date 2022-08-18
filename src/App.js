@@ -23,6 +23,8 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<ProductsPage />} />
+                        <Route path="/category/:categoryName" element={<ProductsPage />} />
+                        <Route path="/search/:search" element={<ProductsPage />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
                         <Route exact path="products/:product_id" element={<ItemPage />}/>
