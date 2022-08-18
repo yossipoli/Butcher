@@ -1,5 +1,5 @@
 import React from "react";
-import FormComponent from "./Components/Form";
+import FormComponent from "./Form";
 
 function Login() {
   const formInputs = {
@@ -16,18 +16,6 @@ function Login() {
       },
       errors: [],
     },
-    // hobbies: {
-    //   id: 3,
-    //   name: "hobbies",
-    //   label: "what is your hobbies? ",
-    //   value: "",
-    //   type: "multiSelect",
-    //   options : [{value:1, label:"1"},{value:2, label:"2"},{value:3, label:"3"},{value:5, label:"2"},{value:4, label:"3"},],
-    //   validations: {
-
-    //   },
-    //   errors: [],
-    // },
     password: {
       id: 2,
       name: "password",

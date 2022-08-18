@@ -1,6 +1,6 @@
 import React from 'react'
 import './Register.css'
-import Form from './Components/Form'
+import Form from './Form'
 
 function Register({firstName="", lastName="",email="",password=""}) {
   const formInputs = {

@@ -7,7 +7,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { RiShoppingCartFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-
 function NavBar() {
   return (
     <Navbar className="nav" fixed='top' bg="light" expand="lg">

@@ -1,11 +1,10 @@
 import React from "react";
 import Gallery from "./Gallery";
 import Description from "./description";
-// import FullDescription from './full-description'
-import AddToCartButtons from "../AddToCartButtons";
+import AddToCartButtons from "./../item-page/AddToCartButtons";
 import "./index.css";
-import { Link, useParams, Redirect } from "react-router-dom";
-import {Products, Images} from "./../DAL/api"
+import { Link, useParams } from "react-router-dom";
+import {Products, Images} from "../../DAL/api"
 import {useState , useEffect} from 'react'
 
 function ItemPage() {

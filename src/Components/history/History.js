@@ -1,5 +1,5 @@
 import './History.css'
-import HistoryCard from './Components/HistoryCard'
+import HistoryCard from './HistoryCard'
 
 import React from 'react'
 

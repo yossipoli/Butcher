@@ -1,9 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Card.css";
-import AddToCartButtons from "../AddToCartButtons";
-import { Link, useParams } from "react-router-dom";
-import { Images } from "./../DAL/api";
+import AddToCartButtons from "./../item-page/AddToCartButtons";
+import { Link } from "react-router-dom";
+import { Images } from "./../../DAL/api";
 import Spinner from "react-bootstrap/Spinner";
 import { useState } from "react";
 
