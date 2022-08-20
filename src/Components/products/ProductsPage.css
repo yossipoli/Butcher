@@ -35,3 +35,7 @@ header{
 .sort{
     font-size: 1.3rem;
 }
+
+.nav .category:hover{
+    background-color: rgb(210, 193, 193);
+}
