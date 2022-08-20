@@ -14,8 +14,8 @@ function NavBar() {
     return (
         <Navbar className="nav" fixed="top" bg="light" expand="lg">
             <Container fluid>
-                <div className="link">
-                    <Link to="/">
+                <div className="link logo">
+                    <Link to="/category/all">
                         <img
                             src="/logo.png"
                             style={{ width: "35px" }}
@@ -65,7 +65,7 @@ function NavBar() {
                     <Form className="d-flex">
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="Type your search"
                             className="me-2"
                             aria-label="Search"
                             value = {input}

@@ -1,6 +1,12 @@
 .nav{
+    font-style: italic;
     justify-content: space-between;
     display: flex;
+}
+
+.nav .logo{
+    /* font-family: 'Bombing'; */
+    font-size: larger;
 }
 
 .nav div{
