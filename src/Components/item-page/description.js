@@ -8,7 +8,7 @@ function Description({name, description, category, price}) {
           {description}
         </p>
         <p>
-          {price}₪ for 1k/g
+          {price}₪ for 1kg
         </p>
           
     </div>

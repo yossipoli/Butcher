@@ -13,15 +13,15 @@ function AddToCartButtons({hideAddBtn}) {
         step={0.5}
         min={0.5}
       />
-      <span>k/g</span>
+      <span>kg</span>
       </div>
 
       <div className="col">
-      <label>special comments</label>
+      <label>special request</label>
       <input
         type="text"
         className="freeText"
-        placeholder="for special comments type here"
+        placeholder="type your request here"
       />
       </div>
 
