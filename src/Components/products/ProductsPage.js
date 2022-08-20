@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import { Products } from "./../../DAL/api";
 import { Categories } from "./../../DAL/api";
 import {useParams} from 'react-router-dom'
-import { get } from "lodash";
 
 function ProductsPage() {
 
@@ -27,8 +26,11 @@ function ProductsPage() {
     }
 
     async function getProductOfCategory(name){
-        const categoryId = await Categories.getCategoryIdByName(name)
-        setProducts(items.filter(product=>product.categoryId == categoryId))
+        if (name==="all") setProducts([...items])
+        else{
+            const categoryId = await Categories.getCategoryIdByName(name)
+            setProducts(items.filter(product=>product.category_id === categoryId))
+        }
     }
 
     !items.length && getProducts()

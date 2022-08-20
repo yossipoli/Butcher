@@ -33,28 +33,28 @@ function NavBar() {
                         <div className="link">
                             <NavDropdown title="Categories" id="categories">
                                 <Link to="/category/chicken">
-                                    <NavDropdown.Item href="/category/chicken">
+                                    <div className="category">
                                         Chicken
-                                    </NavDropdown.Item>
+                                    </div>
                                 </Link>
                                 <Link to="/category/beef">
-                                    <NavDropdown.Item href="/category/beef">
+                                    <div className="category">
                                         Beef
-                                    </NavDropdown.Item>
+                                    </div>
                                 </Link>
                                 <Link to="/category/lamb">
-                                    <NavDropdown.Item href="/category/lamb">
+                                    <div className="category">
                                         Lamb
-                                    </NavDropdown.Item>
+                                    </div>
                                 </Link>
                                 {/* <NavDropdown.Item>
                                     <Link to="/:frozen">Frozen</Link>
-                                </NavDropdown.Item> */}
+                                // </NavDropdown.Item> */}
                                 <NavDropdown.Divider />
-                                <Link to="/">
-                                    <NavDropdown.Item href="/">
+                                <Link to="/category/all">
+                                    <div className="category">
                                         ALL
-                                    </NavDropdown.Item>
+                                    </div>
                                 </Link>
                             </NavDropdown>
                         </div>
