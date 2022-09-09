@@ -33,7 +33,6 @@ function ProductsPage() {
         else{
             // const categoryId = await Categories.getCategoryIdByName(name)
             const categoryId = await api.getCategoryId(name)
-            console.log(categoryId)
             setProducts(items.filter(product=>product.category_id === categoryId.id))
         }
     }
