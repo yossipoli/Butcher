@@ -1,16 +1,22 @@
-.amount{
-    width: 70px;
+.buttons{
+    justify-content: center;
+    margin: auto;
 }
 
-.freeText{
+.amount{
+    width: 70px;
+    margin: 10px;
+}
+
+/* .freeText{
     margin-bottom: 10px;
     width: 95%;
-}
+} */
 
 .row{
     justify-content: center;
-    display: grid;
-    grid-template-columns: 33%;
+    /* display: grid; */
+    /* grid-template-columns: 33%; */
 }
 
 .col{

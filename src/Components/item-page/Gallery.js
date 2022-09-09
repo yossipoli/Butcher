@@ -1,22 +1,17 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './Gallery.css'
 
-function Gallery({images}) {
+function Gallery({images, productName}) {
   return (
     <Carousel fade>
       {
-        images && images.map(image=> 
-        <Carousel.Item>
+        Object.keys(images) && Object.values(images).map((image,index)=> 
+        <Carousel.Item key={index}>
         <img
           className="d-block w-100"
-          // src="holder.js/800x400?text=First slide&bg=373940"
           src={image.src}
-          alt="First slide"
+          alt={'photo #' + index.toString() + ' of ' + productName}
         />
-        {/* <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
       </Carousel.Item>
       )}
 
