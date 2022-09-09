@@ -6,6 +6,8 @@ import { Products } from "./../../DAL/api";
 import { Categories } from "./../../DAL/api";
 import {useParams} from 'react-router-dom'
 
+import api from './../../DAL/api'
+
 function ProductsPage() {
 
     let items = JSON.parse(sessionStorage.getItem("items")) || [];
@@ -20,7 +22,8 @@ function ProductsPage() {
     }, [categoryName, search])
 
     async function getProducts() {
-        items = await Products.data;
+        items = await api.getProducts();
+        // items = await Products.data;
         setProducts(items);
         sessionStorage.setItem("items", JSON.stringify(items));
     }

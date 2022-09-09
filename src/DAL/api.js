@@ -6,9 +6,25 @@ import order_details_data from './../Data/order_details.json'
 import orders_data from './../Data/orders.json'
 import products_data from './../Data/products.json'
 
-class api {
+export default class api {
   constructor(data) {
     this._data = data;
+  }
+
+  static async getProducts() {
+    return await fetch('http://localhost:4000/products', {credentials: "include"}).then(res=>res.json())
+  }
+
+  static async getProduct(id) {
+    return await fetch(`http://localhost:4000/products/${id}`, {credentials: "include"}).then(res=>res.json())
+  }
+
+  static async getImage(id) {
+    return await fetch(`http://localhost:4000/images/${id}`, {credentials: "include"}).then(res=> res.json())
+  }
+
+  static async getAllImages(id) {
+    return await fetch(`http://localhost:4000/images/${id}/all`, {credentials: "include"}).then(res=> res.json())
   }
 
   get data() {
