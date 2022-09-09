@@ -7,12 +7,8 @@
     height: 300px;
 }
 
-.id{
-    text-align: right;
-}
-
-.name{
-    text-align: center;
+.card div .col{
+    margin: 0 19%;
 }
 
 .textArea{

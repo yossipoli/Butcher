@@ -31,8 +31,10 @@ function ProductsPage() {
     async function getProductOfCategory(name){
         if (name==="all") setProducts([...items])
         else{
-            const categoryId = await Categories.getCategoryIdByName(name)
-            setProducts(items.filter(product=>product.category_id === categoryId))
+            // const categoryId = await Categories.getCategoryIdByName(name)
+            const categoryId = await api.getCategoryId(name)
+            console.log(categoryId)
+            setProducts(items.filter(product=>product.category_id === categoryId.id))
         }
     }
 
