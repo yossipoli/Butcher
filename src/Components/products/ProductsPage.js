@@ -5,10 +5,16 @@ import Form from "react-bootstrap/Form";
 // import { Products } from "./../../DAL/api";
 // import { Categories } from "./../../DAL/api";
 import {useParams} from 'react-router-dom'
+import {UserContext} from './../../UserContext'
+import Cookies from 'js-cookie'
 
 import api from './../../DAL/api'
+import { useContext } from "react";
 
 function ProductsPage() {
+
+    const {userId, setUserId} = useContext(UserContext)
+    console.log(userId)
 
     let items = JSON.parse(sessionStorage.getItem("items")) || [];
     const [products, setProducts] = useState(items);
@@ -16,6 +22,7 @@ function ProductsPage() {
     const {categoryName, search} = useParams()
 
     useEffect(() => {
+        setUserId(Cookies.get('user_id') || 0)
         if(categoryName) getProductOfCategory(categoryName)
         if(search) setProducts(items.filter(prod=> prod.name.toLowerCase().includes(search.toLowerCase())))
     }, [categoryName, search])
