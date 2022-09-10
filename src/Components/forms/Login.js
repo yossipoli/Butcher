@@ -1,5 +1,6 @@
 import React from "react";
 import FormComponent from "./Form";
+import { Nevigate } from 'react-router-dom'
 
 function Login() {
   const formInputs = {
@@ -30,10 +31,18 @@ function Login() {
     },
   };
 
-  function onSubmitFunc(values){
-    for (const value in values){
-      console.log(value,":",values[value])
+  async function onSubmitFunc(values){
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      body: JSON.stringify(values)
     }
+
+    const logged = await fetch('http://localhost:4000/customers', requestOptions)
+      .then(res=>res.json())
+    // #TODO change to navigate
+    logged? window.location.replace('/') : alert('Incorrect email or password') 
   }
 
   return (

@@ -2,8 +2,8 @@ import React, { useState , useEffect} from "react";
 import CardComponent from "./Card";
 import "./ProductsPage.css";
 import Form from "react-bootstrap/Form";
-import { Products } from "./../../DAL/api";
-import { Categories } from "./../../DAL/api";
+// import { Products } from "./../../DAL/api";
+// import { Categories } from "./../../DAL/api";
 import {useParams} from 'react-router-dom'
 
 import api from './../../DAL/api'
@@ -15,7 +15,6 @@ function ProductsPage() {
 
     const {categoryName, search} = useParams()
 
-    //TODO need to render if insert new search/category
     useEffect(() => {
         if(categoryName) getProductOfCategory(categoryName)
         if(search) setProducts(items.filter(prod=> prod.name.toLowerCase().includes(search.toLowerCase())))
