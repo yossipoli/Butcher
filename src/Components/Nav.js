@@ -13,14 +13,14 @@ import api from "../DAL/api";
 
 function NavBar({ user }) {
 
-    const [currentUser, setCurrentUser] = useState(user);
+    // const [currentUser, setCurrentUser] = useState(user);
 
-    //TODO not renders
-    useEffect(() => {
-        async function getUser(){
-            setCurrentUser({...await api.getCustomer()} || null);
-        } getUser()
-    },[user])
+    // //TODO not renders
+    // useEffect(() => {
+    //     async function getUser(){
+    //         setCurrentUser({...await api.getCustomer()} || null);
+    //     } getUser()
+    // },[user])
 
     let [input, setInput] = useState("");
 
@@ -43,7 +43,7 @@ function NavBar({ user }) {
                         <div className="link">
                             {/* TODO change logout link to clear cookies */}
                             {user ? (
-                                <Link to="/" onClick={() => api.logout()}>
+                                <Link to="/" onClick={() => api.logout().then(window.location.replace('/'))}>
                                     Logout
                                 </Link>
                             ) : (

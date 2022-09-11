@@ -42,6 +42,10 @@ export default class api {
   static async logout() {
     return await fetch(`http://localhost:4000/customers/logout`, {credentials: "include"})
   }
+  
+  static async getCustomerCart() {
+    return await fetch(`http://localhost:4000/cart`, {credentials: "include"}).then(res=> res.json())
+  }
 
   // get data() {
   //   return new Promise((resolve, reject) => {
