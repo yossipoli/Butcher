@@ -25,7 +25,7 @@ function App() {
 
     useEffect(() => {
         async function checkUserCookie() {
-            await api.checkCookie() && getUser();
+            await api.checkCookie() && await getUser();
         } checkUserCookie()
     }, []);
 
