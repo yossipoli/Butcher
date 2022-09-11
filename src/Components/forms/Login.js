@@ -1,11 +1,11 @@
 import React from "react";
 import FormComponent from "./Form";
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { UserContext } from './../../UserContext'
 import { useContext } from "react";
 
 function Login() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const {userId, setUserId} = useContext(UserContext)
 
   const formInputs = {
@@ -47,7 +47,7 @@ function Login() {
     const logged = await fetch('http://localhost:4000/customers', requestOptions)
       .then(res=>res.json())
 
-    logged? navigate('/') : alert('Incorrect email or password') 
+    logged? window.location.replace('/') : alert('Incorrect email or password') 
   }
 
   return (

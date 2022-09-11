@@ -1,7 +1,8 @@
 import React from "react";
 import "./AddToCartButtons.css";
 
-function AddToCartButtons({ hideAddBtn }) {
+function AddToCartButtons({ hideAddBtn, amount }) {
+    //#TODO onchange for changing amount
     return (
         <div className="buttons row">
             <div className="col">
@@ -9,7 +10,7 @@ function AddToCartButtons({ hideAddBtn }) {
                 <input
                     type="number"
                     className="amount"
-                    defaultValue={1}
+                    defaultValue={amount}
                     step={0.5}
                     min={0.5}
                 />
