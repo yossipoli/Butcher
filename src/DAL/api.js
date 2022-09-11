@@ -30,6 +30,10 @@ export default class api {
   static async getCategoryId(name) {
     return await fetch(`http://localhost:4000/categories/${name}`, {credentials: "include"}).then(res=> res.json())
   }
+  
+  static async getCustomer(id) {
+    return await fetch(`http://localhost:4000/customers/${id}`, {credentials: "include"}).then(res=> res.json())
+  }
 
   // get data() {
   //   return new Promise((resolve, reject) => {

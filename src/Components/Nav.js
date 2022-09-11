@@ -6,10 +6,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./Nav.css";
+import { UserContext } from './../UserContext'
 
-function NavBar() {
+function NavBar({user}) {
+    // console.log(user)
     let [input, setInput] = useState("")
     return (
         <Navbar className="nav" fixed="top" bg="light" expand="lg">
@@ -21,14 +23,15 @@ function NavBar() {
                             style={{ width: "35px" }}
                             alt="logo"
                         />
-                        Butcher
+                        Butcher , Hello {user?.first_name || 'guest'}
                     </Link>
                 </div>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                         <div className="link">
-                            <Link to="/login">Login</Link>
+                            {/* TODO change logout link to clear cookies */}
+                           {user? <Link to="/">Logout</Link> : <Link to="/login">Login</Link>}
                         </div>
                         <div className="link">
                             <NavDropdown title="Categories" id="categories">
@@ -59,7 +62,7 @@ function NavBar() {
                             </NavDropdown>
                         </div>
                         <div className="link">
-                            <Link to="/personal"> My Settings </Link>
+                            {user? <Link to="/personal"> My Settings </Link> : ''}
                         </div>
                     </Nav>
                     <Form className="d-flex">
@@ -75,7 +78,7 @@ function NavBar() {
                             <Button variant="outline-success">Search</Button>
                         </Link>
                         <div className="link cart">
-                            <Link to="/personal/cart">
+                            <Link to="/personal/cart" style={{pointerEvents: user? 'auto' : 'none'}}>
                                 {" "}
                                 <RiShoppingCartFill />{" "}
                             </Link>
