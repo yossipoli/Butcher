@@ -5,15 +5,15 @@ import Form from "react-bootstrap/Form";
 // import { Products } from "./../../DAL/api";
 // import { Categories } from "./../../DAL/api";
 import {useParams} from 'react-router-dom'
-import {UserContext} from './../../UserContext'
+// import {UserContext} from './../../UserContext'
 import Cookies from 'js-cookie'
 
 import api from './../../DAL/api'
-import { useContext } from "react";
+// import { useContext } from "react";
 
 function ProductsPage() {
 
-    const {userId, setUserId} = useContext(UserContext)
+    const [userId, setUserId] = useState(0)
 
     let items = JSON.parse(sessionStorage.getItem("items")) || [];
     const [products, setProducts] = useState(items);

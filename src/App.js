@@ -13,23 +13,26 @@ import Personal from "./Components/personal/Personal";
 import PersonalDetails from "./Components/personal/PersonalDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import api from "./DAL/api";
-import { UserContext } from "./UserContext";
+// import { UserContext } from "./UserContext";
 
 function App() {
-    const [userId, setUserId] = useState(0);
+    // const [userId, setUserId] = useState(0);
     const [user, setUser] = useState(null);
 
+    async function getUser() {
+        setUser({ ...await api.getCustomer() } || null);
+    }
+
     useEffect(() => {
-        async function getUser() {
-            setUser({ ...(await api.getCustomer(+userId)) });
-        }
-        !user && getUser();
-    }, [userId]);
+        async function checkUserCookie() {
+            await api.checkCookie() && getUser();
+        } checkUserCookie()
+    }, []);
 
     return (
         <div className="App">
             <Router>
-                <UserContext.Provider value={{ userId, setUserId }}>
+                {/* <UserContext.Provider value={{ userId, setUserId }}> */}
                     <header className="App-header">
                         <NavBar user={user} />
                     </header>
@@ -63,7 +66,7 @@ function App() {
                             <Route path="*" element={<ProductsPage />} />
                         </Routes>
                     </main>
-                </UserContext.Provider>
+                {/* </UserContext.Provider> */}
 
                 <Footer />
             </Router>

@@ -1,14 +1,14 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect/*, useContext */} from 'react'
 import Button from 'react-bootstrap/Button';
 import {UserContext} from './../../UserContext'
 import api from './../../DAL/api'
 
 function PersonalDetails(/*{first_name, last_name, email, password, phone=false, city=false, address=false}*/) {
-  const {userId} = useContext(UserContext)
+  // const {userId} = useContext(UserContext)
   const [user, setUser] = useState(null)
 
   async function getUserDate(){
-    setUser(await api.getCustomer(userId))
+    setUser(await api.getCustomer())
   }
 
   useEffect(()=>{

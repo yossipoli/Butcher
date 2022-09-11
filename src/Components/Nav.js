@@ -6,13 +6,24 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useEffect, useState /*, useContext */ } from "react";
 import "./Nav.css";
-import { UserContext } from './../UserContext'
+// import { UserContext } from './../UserContext'
+import api from "../DAL/api";
 
-function NavBar({user}) {
-    // console.log(user)
-    let [input, setInput] = useState("")
+function NavBar({ user }) {
+
+    const [currentUser, setCurrentUser] = useState(user);
+
+    //TODO not renders
+    useEffect(() => {
+        async function getUser(){
+            setCurrentUser({...await api.getCustomer()} || null);
+        } getUser()
+    },[user])
+
+    let [input, setInput] = useState("");
+
     return (
         <Navbar className="nav" fixed="top" bg="light" expand="lg">
             <Container fluid>
@@ -23,7 +34,7 @@ function NavBar({user}) {
                             style={{ width: "35px" }}
                             alt="logo"
                         />
-                        Butcher , Hello {user?.first_name || 'guest'}
+                        Butcher , Hello {user?.first_name || "guest"}
                     </Link>
                 </div>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -31,38 +42,40 @@ function NavBar({user}) {
                     <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                         <div className="link">
                             {/* TODO change logout link to clear cookies */}
-                           {user? <Link to="/">Logout</Link> : <Link to="/login">Login</Link>}
+                            {user ? (
+                                <Link to="/" onClick={() => api.logout()}>
+                                    Logout
+                                </Link>
+                            ) : (
+                                <Link to="/login">Login</Link>
+                            )}
                         </div>
                         <div className="link">
                             <NavDropdown title="Categories" id="categories">
                                 <Link to="/category/chicken">
-                                    <div className="category">
-                                        Chicken
-                                    </div>
+                                    <div className="category">Chicken</div>
                                 </Link>
                                 <Link to="/category/beef">
-                                    <div className="category">
-                                        Beef
-                                    </div>
+                                    <div className="category">Beef</div>
                                 </Link>
                                 <Link to="/category/lamb">
-                                    <div className="category">
-                                        Lamb
-                                    </div>
+                                    <div className="category">Lamb</div>
                                 </Link>
                                 {/* <NavDropdown.Item>
                                     <Link to="/:frozen">Frozen</Link>
                                 // </NavDropdown.Item> */}
                                 <NavDropdown.Divider />
                                 <Link to="/category/all">
-                                    <div className="category">
-                                        ALL
-                                    </div>
+                                    <div className="category">ALL</div>
                                 </Link>
                             </NavDropdown>
                         </div>
                         <div className="link">
-                            {user? <Link to="/personal"> My Settings </Link> : ''}
+                            {user ? (
+                                <Link to="/personal"> My Settings </Link>
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </Nav>
                     <Form className="d-flex">
@@ -71,14 +84,19 @@ function NavBar({user}) {
                             placeholder="Type your search"
                             className="me-2"
                             aria-label="Search"
-                            value = {input}
-                            onChange={e=>setInput(e.target.value)}
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
                         />
                         <Link to={`/search/${input}`}>
                             <Button variant="outline-success">Search</Button>
                         </Link>
                         <div className="link cart">
-                            <Link to="/personal/cart" style={{pointerEvents: user? 'auto' : 'none'}}>
+                            <Link
+                                to="/personal/cart"
+                                style={{
+                                    pointerEvents: user ? "auto" : "none",
+                                }}
+                            >
                                 {" "}
                                 <RiShoppingCartFill />{" "}
                             </Link>
