@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {useState} from "react";
+import { useState, useEffect } from "react";
 import NavBar from "./Components/Nav";
 import Footer from "./Components/Footer";
 import ItemPage from "./Components/item-page/index.js";
@@ -12,23 +12,30 @@ import Register from "./Components/forms/Register";
 import Personal from "./Components/personal/Personal";
 import PersonalDetails from "./Components/personal/PersonalDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import {UserContext} from "./UserContext";
+import api from "./DAL/api";
+import { UserContext } from "./UserContext";
 
 function App() {
+    const [userId, setUserId] = useState(0);
+    const [user, setUser] = useState(null);
 
-    const [userId, setUserId] = useState(0)
+    useEffect(() => {
+        async function getUser() {
+            setUser({ ...(await api.getCustomer(+userId)) });
+        }
+        !user && getUser();
+    }, [userId]);
 
     return (
         <div className="App">
             <Router>
-                <header className="App-header">
-                    <NavBar />
-                </header>
+                <UserContext.Provider value={{ userId, setUserId }}>
+                    <header className="App-header">
+                        <NavBar user={user} />
+                    </header>
 
-                <main>
-                        <UserContext.Provider value={{userId, setUserId}}>
-                    <Routes>
+                    <main>
+                        <Routes>
                             <Route path="/" element={<ProductsPage />} />
                             <Route
                                 path="/category/:categoryName"
@@ -54,9 +61,9 @@ function App() {
                                 <Route path="history" element={<History />} />
                             </Route>
                             <Route path="*" element={<ProductsPage />} />
-                    </Routes>
-                        </UserContext.Provider>
-                </main>
+                        </Routes>
+                    </main>
+                </UserContext.Provider>
 
                 <Footer />
             </Router>

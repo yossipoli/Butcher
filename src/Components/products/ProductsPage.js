@@ -14,7 +14,6 @@ import { useContext } from "react";
 function ProductsPage() {
 
     const {userId, setUserId} = useContext(UserContext)
-    console.log(userId)
 
     let items = JSON.parse(sessionStorage.getItem("items")) || [];
     const [products, setProducts] = useState(items);

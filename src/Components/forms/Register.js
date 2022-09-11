@@ -84,17 +84,17 @@ function Register({firstName="", lastName="",email="",password=""}) {
       errors: [],
     },
   
-    agree: {
-      id: 7,
-      name: "agree",
-      label: "Agree",
-      value: false,
-      type: "checkbox",
-      validations: {
-        required: true,
-      },
-      errors: [],
-    },
+    // agree: {
+    //   id: 7,
+    //   name: "agree",
+    //   label: "Agree",
+    //   value: false,
+    //   type: "checkbox",
+    //   validations: {
+    //     required: true,
+    //   },
+    //   errors: [],
+    // },
   };
 
   const onSubmitFunc = (values) => {
