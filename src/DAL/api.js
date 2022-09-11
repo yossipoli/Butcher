@@ -11,6 +11,10 @@ export default class api {
     this._data = data;
   }
 
+  static async checkCookie() {
+    return await fetch('http://localhost:4000/customers/check-cookie', {credentials: "include"}).then(res=>res.json())
+  }
+
   static async getProducts() {
     return await fetch('http://localhost:4000/products', {credentials: "include"}).then(res=>res.json())
   }
@@ -31,8 +35,12 @@ export default class api {
     return await fetch(`http://localhost:4000/categories/${name}`, {credentials: "include"}).then(res=> res.json())
   }
   
-  static async getCustomer(id) {
-    return await fetch(`http://localhost:4000/customers/${id}`, {credentials: "include"}).then(res=> res.json())
+  static async getCustomer() {
+    return await fetch(`http://localhost:4000/customers/`, {credentials: "include"}).then(res=> res.json())
+  }
+
+  static async logout() {
+    return await fetch(`http://localhost:4000/customers/logout`, {credentials: "include"})
   }
 
   // get data() {
