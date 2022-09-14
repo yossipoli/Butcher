@@ -12,7 +12,6 @@ import "./Nav.css";
 import api from "../DAL/api";
 
 function NavBar({ user }) {
-
     // const [currentUser, setCurrentUser] = useState(user);
 
     // //TODO not renders
@@ -34,22 +33,12 @@ function NavBar({ user }) {
                             style={{ width: "35px" }}
                             alt="logo"
                         />
-                        Butcher , Hello {user?.first_name || "guest"}
+                        Butcher
                     </Link>
                 </div>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-                        <div className="link">
-                            {/* TODO change logout link to clear cookies */}
-                            {user ? (
-                                <Link to="/" onClick={() => api.logout().then(window.location.replace('/'))}>
-                                    Logout
-                                </Link>
-                            ) : (
-                                <Link to="/login">Login</Link>
-                            )}
-                        </div>
                         <div className="link">
                             <NavDropdown title="Categories" id="categories">
                                 <Link to="/category/chicken">
@@ -70,15 +59,6 @@ function NavBar({ user }) {
                                 </Link>
                             </NavDropdown>
                         </div>
-                        <div className="link">
-                            {user ? (
-                                <Link to="/personal"> My Settings </Link>
-                            ) : (
-                                ""
-                            )}
-                        </div>
-                    </Nav>
-                    <Form className="d-flex">
                         <Form.Control
                             type="search"
                             placeholder="Type your search"
@@ -90,6 +70,20 @@ function NavBar({ user }) {
                         <Link to={`/search/${input}`}>
                             <Button variant="outline-success">Search</Button>
                         </Link>
+                    </Nav>
+
+                    <div>Hello {user?.first_name || "guest"}</div>
+                    <div className="link">
+                        {user ? (
+                            <Link to="/personal/personal-details">
+                                {" "}
+                                My Settings{" "}
+                            </Link>
+                        ) : (
+                            ""
+                        )}
+                    </div>
+                    <Form className="d-flex">
                         <div className="link cart">
                             <Link
                                 to="/personal/cart"
@@ -102,6 +96,22 @@ function NavBar({ user }) {
                             </Link>
                         </div>
                     </Form>
+                    <div className="link">
+                        {user ? (
+                            <Link
+                                to="/"
+                                onClick={() =>
+                                    api
+                                        .logout()
+                                        .then(window.location.replace("/"))
+                                }
+                            >
+                                Logout
+                            </Link>
+                        ) : (
+                            <Link to="/login">Login</Link>
+                        )}
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -8,7 +8,7 @@ function Personal() {
     const navigate = useNavigate();
     useEffect(() => {
         async function checkPermission() {
-            !(await api.checkCookie()) && navigate("/login");
+            !(await api.checkCookie()) && navigate('/login');
         }
         checkPermission();
     }, []);
