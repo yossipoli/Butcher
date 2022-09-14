@@ -21,7 +21,7 @@ function ItemPage() {
             setImages({...imgs});
             // setProduct(await Products.getObjectById(parseInt(product_id)));
             const prod = await api.getProduct(parseInt(product_id))
-            setProduct({...prod[0]});
+            setProduct({...prod});
         }
         getData();
     }, []);
