@@ -13,10 +13,14 @@
     width: 95%;
 } */
 
-.row{
+.button .row{
     justify-content: center;
     /* display: grid; */
     /* grid-template-columns: 33%; */
+}
+
+.buttons button {
+    margin-top: 10px;
 }
 
 .col{

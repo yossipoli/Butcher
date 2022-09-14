@@ -1,20 +1,20 @@
 import React from "react";
 import "./AddToCartButtons.css";
 
-function AddToCartButtons({ hideAddBtn, amount }) {
-    //#TODO onchange for changing amount
+function AddToCartButtons({ hideAddBtn, amount, onChange }) {
     return (
-        <div className="buttons row">
+        <div className="buttons">
             <div className="col">
                 <label>amount:</label>
                 <input
                     type="number"
                     className="amount"
-                    defaultValue={amount}
+                    defaultValue={amount || 1}
+                    onChange = {onChange}
                     step={0.5}
                     min={0.5}
                 />
-                kg
+                {" "} kg
             </div>
 
             {/* <div className="col">
