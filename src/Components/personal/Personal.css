@@ -16,3 +16,11 @@
   .col{
     justify-content: center;
   }
+
+  .personal-pages{
+    text-align: center;
+  }
+ 
+  .personal-pages button{
+    font-size: 1.5rem;
+  }

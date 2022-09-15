@@ -15,6 +15,11 @@
     align-items: center;
 }
 
+/* cart icon */
+.nav .d-flex{
+    justify-content: center;
+}
+
 .nav .cart{
     margin-left: 30px;
     font-size: 30px;

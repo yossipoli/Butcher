@@ -22,7 +22,7 @@ function ProductsPage() {
 
     useEffect(() => {
         setUserId(Cookies.get('user_id') || 0)
-        if(categoryName) getProductOfCategory(categoryName)
+        if(categoryName) getProductsOfCategory(categoryName)
         if(search) setProducts(items.filter(prod=> prod.name.toLowerCase().includes(search.toLowerCase())))
     }, [categoryName, search])
 
@@ -33,7 +33,7 @@ function ProductsPage() {
         sessionStorage.setItem("items", JSON.stringify(items));
     }
 
-    async function getProductOfCategory(name){
+    async function getProductsOfCategory(name){
         if (name==="all") setProducts([...items])
         else{
             // const categoryId = await Categories.getCategoryIdByName(name)

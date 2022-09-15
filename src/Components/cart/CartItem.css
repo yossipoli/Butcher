@@ -1,6 +1,6 @@
 .cartItem{
     margin: 30px 0;
-    height: 300px;
+    height: 400px;
 }
 
 .cartItem .buttons{
@@ -8,16 +8,25 @@
     align-items: center;
 }
 
-.cartItem .cartPic{
-    max-width: 500px;
-    height: 300px;
+.cartItem .description{
+    height: auto;
 }
 
-.cartItem .row{
-    margin: 8px 100px;
+.cartItem .cartPic{
+    max-width: 500px;
+    height: 350px;
+}
+
+.cartItem .price{
+    margin-top: 20px;
     display: flex;
+    text-align: right;
 }
-.cartItem .in-col{
-    display: block;
-    margin: 0 25px;
-}
+
+/* @media screen and (max-with: 400px){
+    .body{
+        margin: 2px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+} */
