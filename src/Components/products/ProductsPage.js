@@ -38,7 +38,7 @@ function ProductsPage() {
         else{
             // const categoryId = await Categories.getCategoryIdByName(name)
             const categoryId = await api.getCategoryId(name)
-            setProducts(items.filter(product=>product.category_id === categoryId.id))
+            setProducts(items.filter(product=>product.categoryId === categoryId.id))
         }
     }
 

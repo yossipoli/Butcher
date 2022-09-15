@@ -12,14 +12,13 @@ import "./Nav.css";
 import api from "../DAL/api";
 
 function NavBar({ user }) {
-    // const [currentUser, setCurrentUser] = useState(user);
+    const [categories, setCategories] = useState([]);
 
-    // //TODO not renders
-    // useEffect(() => {
-    //     async function getUser(){
-    //         setCurrentUser({...await api.getCustomer()} || null);
-    //     } getUser()
-    // },[user])
+    useEffect(() => {
+        (async function getCategories() {
+            setCategories(await api.getAllCategories());
+        })();
+    }, []);
 
     let [input, setInput] = useState("");
 
@@ -41,18 +40,18 @@ function NavBar({ user }) {
                     <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                         <div className="link">
                             <NavDropdown title="Categories" id="categories">
-                                <Link to="/category/chicken">
-                                    <div className="category">Chicken</div>
-                                </Link>
-                                <Link to="/category/beef">
-                                    <div className="category">Beef</div>
-                                </Link>
-                                <Link to="/category/lamb">
-                                    <div className="category">Lamb</div>
-                                </Link>
-                                {/* <NavDropdown.Item>
-                                    <Link to="/:frozen">Frozen</Link>
-                                // </NavDropdown.Item> */}
+                                {categories.map((category) => (
+                                    <Link
+                                        key={category.id}
+                                        to={`/category/${category.name.toLowerCase()}`}
+                                    >
+                                        {" "}
+                                        <div className="category">
+                                            {category.name}
+                                        </div>
+                                    </Link>
+                                ))}
+
                                 <NavDropdown.Divider />
                                 <Link to="/category/all">
                                     <div className="category">ALL</div>

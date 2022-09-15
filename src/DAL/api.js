@@ -11,6 +11,10 @@ export default class api {
     this._data = data;
   }
 
+  static async getAllCategories() {
+    return await fetch('http://localhost:4000/categories', {credentials: "include"}).then(res=>res.json())
+  }
+
   static async checkCookie() {
     return await fetch('http://localhost:4000/customers/check-cookie', {credentials: "include"}).then(res=>res.json())
   }
