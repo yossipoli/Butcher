@@ -36,7 +36,7 @@ function ItemPage() {
                         </div>
                         <div className="col">
                             <Description {...product} />
-                            <AddToCartButtons />
+                            <AddToCartButtons productId = {product_id}/>
                         </div>
                     </div>
                 ) : (
