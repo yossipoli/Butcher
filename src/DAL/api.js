@@ -6,19 +6,24 @@ import order_details_data from './../Data/order_details.json'
 import orders_data from './../Data/orders.json'
 import products_data from './../Data/products.json'
 
-export default class api {
-  constructor(data) {
-    this._data = data;
+//POST requests options
+function getRequestOption(obj) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    credentials: 'include',
+    body: JSON.stringify(obj)
   }
+  return requestOptions
+}
+
+export default class api {
+  // constructor(data) {
+  //   this._data = data;
+  // }
 
   static async login(values) {
-    const requestOptions = {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      credentials: 'include',
-      body: JSON.stringify(values)
-    }
-
+    const requestOptions = getRequestOption(values)
     return await fetch('http://localhost:4000/customers', requestOptions)
       .then(res=>res.json())
   }
@@ -61,6 +66,11 @@ export default class api {
   
   static async getCustomerCart() {
     return await fetch(`http://localhost:4000/cart`, {credentials: "include"}).then(res=> res.json())
+  }
+
+  static async addToCart(product) {
+    const requestOptions = getRequestOption(product)
+    return await fetch('http://localhost:4000/cart/add', requestOptions).then(res=> res.json())
   }
 
   // get data() {

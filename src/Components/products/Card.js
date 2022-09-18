@@ -39,7 +39,7 @@ function CardComponent(props) {
                 <Card.Text className="textArea">{props.description}</Card.Text>
                 <Card.Text className="price">{props.price}₪ for 1kg</Card.Text>
 
-                <AddToCartButtons />
+                <AddToCartButtons productId={props.id}/>
             </Card.Body>
         </Card>
     );
