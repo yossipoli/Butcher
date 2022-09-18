@@ -11,6 +11,18 @@ export default class api {
     this._data = data;
   }
 
+  static async login(values) {
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      body: JSON.stringify(values)
+    }
+
+    return await fetch('http://localhost:4000/customers', requestOptions)
+      .then(res=>res.json())
+  }
+
   static async getAllCategories() {
     return await fetch('http://localhost:4000/categories', {credentials: "include"}).then(res=>res.json())
   }

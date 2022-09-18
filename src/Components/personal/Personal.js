@@ -14,7 +14,7 @@ function Personal() {
         checkPermission();
     }, []);
     return (
-        <div>
+        <div className="personal">
             <h1>Personal Page</h1>
 
             <div className="col start-position">

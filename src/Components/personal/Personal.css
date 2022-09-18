@@ -1,26 +1,21 @@
-.personalOption:hover{
+.personalOption:hover {
     background-color: rgb(16, 101, 220);
     color: aliceblue;
     font-weight: bold;
 }
 
-.start-position{
-    margin-top: 10px;
-    align-items: flex-start;
-  }
-
-  .leftCol{
+.leftCol {
     margin-top: 60px;
-  }
+}
 
-  .col{
+.col {
     justify-content: center;
-  }
+}
 
-  .personal-pages{
+.personal-pages {
     text-align: center;
-  }
- 
-  .personal-pages button{
+}
+
+.personal-pages button {
     font-size: 1.5rem;
-  }
+}
