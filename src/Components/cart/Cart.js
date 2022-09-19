@@ -24,7 +24,7 @@ function Cart() {
         <h1>Cart</h1>
         <h3>TOTAL: {totalBill}₪</h3>
       </div>
-        {!cart.length? <h5>Your cart is Empty</h5> : cart.map((product, index)=> <CartItem key={index} totalBill={totalBill} setTotalBill={setTotalBill} product_amount={product.amount} {...product.product}/>)}
+        {!cart.length? <h5>Your cart is Empty</h5> : cart.map((product, index)=> <CartItem key={index} setCart={setCart} totalBill={totalBill} setTotalBill={setTotalBill} product_amount={product.amount} {...product.product}/>)}
         <div className='checkoutBtn'>
           <Button>CheckOut</Button>
         </div>

@@ -73,6 +73,11 @@ export default class api {
     return await fetch('http://localhost:4000/cart/add', requestOptions).then(res=> res.json())
   }
 
+  static async removeFromCart(product_id) {
+    const requestOptions = getRequestOption(product_id)
+    return await fetch('http://localhost:4000/cart/remove', requestOptions).then(res=> res.json())
+  }
+
   // get data() {
   //   return new Promise((resolve, reject) => {
   //     setTimeout(() => {

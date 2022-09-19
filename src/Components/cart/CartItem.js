@@ -13,6 +13,7 @@ function CartItem({
     stock,
     setTotalBill,
     totalBill,
+    setCart
 }) {
     // const [productDetails, setProductDetails] = useState(null);
     const [productImage, setProductImage] = useState();
@@ -20,6 +21,15 @@ function CartItem({
     let [amount, setAmount] = useState(product_amount);
 
     let [total, setTotal] = useState(amount * price);
+
+    async function handleRemove(){
+        await api.removeFromCart({product_id : id})
+        //TODO render all details
+        window.location.reload()
+        // setCart([...await api.getCustomerCart()])
+        // let newBill = totalBill - total
+        // setTotalBill(newBill)
+    }
 
     function handleAmountChange(e) {
         amount = e.target.value;
@@ -68,7 +78,7 @@ function CartItem({
                         <h6>Total: {total}₪</h6>
                     </div>
                     <div className="col-1 buttons">
-                        <Button variant="outline-danger">Remove</Button>{" "}
+                        <Button variant="outline-danger" onClick={handleRemove}>Remove</Button>{" "}
                     </div>
                 </div>
             </div>
