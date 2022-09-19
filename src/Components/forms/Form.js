@@ -48,7 +48,7 @@ function FormComponent({formInputs , onSubmitFunc, link, title, subTitle="" }) {
   }
 
   return (
-    <Alert variant= "success">
+    <Alert variant= "warning">
       <Alert.Heading className="formHead">{title}</Alert.Heading>
       <p className="formHead" ><Link to={link}>{subTitle}</Link></p>
       <hr />
@@ -63,7 +63,7 @@ function FormComponent({formInputs , onSubmitFunc, link, title, subTitle="" }) {
             />
           ))}
 
-          <Button onClick={submitted} variant="success">
+          <Button onClick={submitted} variant="warning">
             Submit
           </Button>
         </Form>
