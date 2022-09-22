@@ -52,19 +52,19 @@ function Register({
             },
             errors: [],
         },
-        confirmEmail: {
-            id: 4,
-            name: "confirmEmail",
-            label: "Confirm Email",
-            placeholder: "Please re-enter your email for validation",
-            value: email,
-            type: "email",
-            validations: {
-                required: true,
-                selfsame: "email",
-            },
-            errors: [],
-        },
+        // confirmEmail: {
+        //     id: 4,
+        //     name: "confirmEmail",
+        //     label: "Confirm Email",
+        //     placeholder: "Please re-enter your email for validation",
+        //     value: email,
+        //     type: "email",
+        //     validations: {
+        //         required: true,
+        //         selfsame: "email",
+        //     },
+        //     errors: [],
+        // },
         password: {
             id: 5,
             name: "password",
@@ -106,16 +106,17 @@ function Register({
         // },
     };
 
-    const onSubmitFunc = (values) => {
+    const onSubmitFunc = async(values) => {
         const registrationDetails = {
             first_name: values.firstName,
             last_name: values.lastName,
             email: values.email,
             password: values.password,
         };
-        const isNewEmail = api.register(registrationDetails);
+        const isNewEmail = await api.register(registrationDetails);
+        console.log(isNewEmail)
         isNewEmail
-            ? navigate("login")
+            ? alert("An confirmation email sent to your email inbox")
             : alert("This email already registered and in use");
     };
 

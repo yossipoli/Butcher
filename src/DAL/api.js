@@ -19,7 +19,7 @@ export default class api {
 
   static async login(values) {
     const requestOptions = getRequestOption(values)
-    return await fetch('http://localhost:4000/customers', requestOptions) .then(res=>res.json())
+    return await fetch('http://localhost:4000/customers', requestOptions).then(res=>res.json())
   }
 
   static async getAllCategories() {
