@@ -1,10 +1,8 @@
-import { useState, useEffect/*, useContext */} from 'react'
+import { useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
-import {UserContext} from './../../UserContext'
 import api from './../../DAL/api'
 
-function PersonalDetails(/*{first_name, last_name, email, password, phone=false, city=false, address=false}*/) {
-  // const {userId} = useContext(UserContext)
+function PersonalDetails() {
   const [user, setUser] = useState(null)
 
   async function getUserDate(){

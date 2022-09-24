@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import AddToCartButtons from "./../item-page/AddToCartButtons";
 import "./CartItem.css";
 import api from "../../DAL/api";
+import { useContext } from "react";
+import { CartContext } from "../../CartContext";
 
 function CartItem({
     id,
@@ -13,22 +15,20 @@ function CartItem({
     stock,
     setTotalBill,
     totalBill,
-    setCart
 }) {
-    // const [productDetails, setProductDetails] = useState(null);
     const [productImage, setProductImage] = useState();
 
     let [amount, setAmount] = useState(product_amount);
 
     let [total, setTotal] = useState(amount * price);
 
+    const {userCart, setUserCart} = useContext(CartContext)
+
     async function handleRemove(){
         await api.removeFromCart({product_id : id})
-        //TODO render all details
-        window.location.reload()
-        // setCart([...await api.getCustomerCart()])
-        // let newBill = totalBill - total
-        // setTotalBill(newBill)
+        let newBill = totalBill - total
+        setTotalBill(newBill)
+        setUserCart(await api.getCustomerCart())
     }
 
     function handleAmountChange(e) {
@@ -46,6 +46,7 @@ function CartItem({
         newBill += total;
         setTotalBill(newBill);
         setTotal(total);
+        // TODO update amount in server
     }
 
     useEffect(() => {
@@ -53,7 +54,7 @@ function CartItem({
             setProductImage({ ...(await api.getImage(id)) });
         }
         getItemData();
-    }, []);
+    }, [userCart]);
 
     return (
         <div className={`cartItem row`}>
