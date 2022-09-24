@@ -11,7 +11,10 @@ function Cart() {
     const [totalBill, setTotalBill] = useState(0);
 
     useEffect(() => {
+      (async ()=> {
+        setUserCart(await api.getCustomerCart())
         setTotalBill(userCart.reduce((sum, product) => sum + product.amount * product.product.price,0));
+      }) ()
     }, [userCart]);
 
     return (

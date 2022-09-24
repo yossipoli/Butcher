@@ -47,13 +47,15 @@ function CartItem({
         setTotalBill(newBill);
         setTotal(total);
         // TODO update amount in server
+        const updatedProduct = userCart.find(prod=> prod.productId === id)
+        updatedProduct.amount = amount
+        setUserCart([...userCart])
     }
 
     useEffect(() => {
-        async function getItemData() {
+        (async () => {
             setProductImage({ ...(await api.getImage(id)) });
-        }
-        getItemData();
+        })()
     }, [userCart]);
 
     return (
