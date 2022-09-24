@@ -1,13 +1,13 @@
 import React from "react";
 import FormComponent from "./Form";
 // import { useNavigate } from 'react-router-dom'
-import { UserContext } from './../../UserContext'
+import { CartContext } from './../../CartContext'
 import { useContext } from "react";
 import api from "../../DAL/api";
 
 function Login() {
   // const navigate = useNavigate()
-  const {userId, setUserId} = useContext(UserContext)
+  const {userCart, setUserCart} = useContext(CartContext)
 
   const formInputs = {
     email: {
