@@ -1,3 +1,14 @@
+Butcher
+
+A meat store
+
+based on ReactJS.
+The data written in MySQL for the users, products, categories, pictures, orders and carts.
+the server written in NestJS.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
